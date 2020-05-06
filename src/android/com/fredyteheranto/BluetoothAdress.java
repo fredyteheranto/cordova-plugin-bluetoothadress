@@ -13,7 +13,6 @@ import android.util.Log;
 import android.bluetooth.BluetoothAdapter;
 import android.os.Bundle;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 
 import java.util.Date;
 
@@ -30,7 +29,8 @@ public class BluetoothAdress extends CordovaPlugin {
     if (action.equals("bluetoothAdress")) {
       String SECURE_SETTINGS_BLUETOOTH_ADDRESS = "bluetooth_address";
 
-      String macAddress = Settings.Secure.getString(getContentResolver(), SECURE_SETTINGS_BLUETOOTH_ADDRESS);
+      String macAddress = android.provider.Settings.Secure.getString(getContentResolver(),
+          SECURE_SETTINGS_BLUETOOTH_ADDRESS);
       // An example of returning data back to the web layer
       // Echo back the first argument
       final PluginResult result = new PluginResult(PluginResult.Status.OK, macAddress);
