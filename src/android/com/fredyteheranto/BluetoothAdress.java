@@ -26,8 +26,7 @@ public class BluetoothAdress extends CordovaPlugin {
     Log.d(TAG, "Inicializando BluetoothAdress");
   }
 
-  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext, Context context)
-      throws JSONException {
+  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     if (action.equals("bluetoothAdress")) {
       String SECURE_SETTINGS_BLUETOOTH_ADDRESS = "bluetooth_address";
 
