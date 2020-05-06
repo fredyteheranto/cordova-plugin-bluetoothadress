@@ -31,7 +31,7 @@ Seleccionar proyecto: `cd nombreProyecto/`
 
 ## Paso 3:
 
-Instalar Plugin: `ionic cordova plugin add https://github.com/thecouk/ionic-cordova-plugin-template.git`
+Instalar Plugin: `ionic cordova plugin add https://github.com/fredyteheranto/cordova-plugin-bluetoothadress.git`
 
 ## Paso 4:
 
