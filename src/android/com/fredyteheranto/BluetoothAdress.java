@@ -22,19 +22,18 @@ public class BluetoothAdress extends CordovaPlugin {
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
-
     Log.d(TAG, "Inicializando BluetoothAdress");
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     if (action.equals("bluetoothAdress")) {
-      String SECURE_SETTINGS_BLUETOOTH_ADDRESS = "bluetooth_address";
+      // String SECURE_SETTINGS_BLUETOOTH_ADDRESS = "bluetooth_address";
+      String SECURE_SETTINGS_BLUETOOTH_ADDRESS = args.getString(0);
 
       String macAddress = android.provider.Settings.Secure.getString(context.getContentResolver(),
           SECURE_SETTINGS_BLUETOOTH_ADDRESS);
-      // An example of returning data back to the web layer
-      // Echo back the first argument
-      final PluginResult result = new PluginResult(PluginResult.Status.OK, macAddress);
+      final PluginResult result = new PluginResult(PluginResult.Status.OK,
+          macAddress + SECURE_SETTINGS_BLUETOOTH_ADDRESS);
       callbackContext.sendPluginResult(result);
     }
     return true;
