@@ -1,5 +1,3 @@
-/**
- */
 package com.fredyteheranto;
 
 import org.apache.cordova.CallbackContext;
@@ -11,8 +9,10 @@ import org.apache.cordova.PluginResult.Status;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import android.util.Log;
+import android.bluetooth.BluetoothAdapter;
+import android.os.Bundle;
+import android.content.Intent;
 
 import java.util.Date;
 
@@ -27,6 +27,8 @@ public class BluetoothAdress extends CordovaPlugin {
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     if (action.equals("bluetoothAdress")) {
+
+      String macAddress = android.provider.Settings.Secure.getString(context.getContentResolver(), "bluetooth_address");
 
       String SECURE_SETTINGS_BLUETOOTH_ADDRESS = "bluetooth_address";
 
